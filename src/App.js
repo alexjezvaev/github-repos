@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
 import { Home } from './pages/Home'
 import { About } from './pages/About'
@@ -17,11 +17,11 @@ function App() {
           <Navbar />
           <div className="container pt-4">
             <Alert alert={{ text: 'Test alert' }} />
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/profile/:name" component={Profile} />
-            </Switch>
+            <Routes>
+              <Route path="/" exact element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/profile/:name" element={<Profile />} />
+            </Routes>
           </div>
         </BrowserRouter>
       </AlertState>
